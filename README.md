@@ -59,7 +59,7 @@ data
     │   ├── ...
 ```
 
-You can follow official [instruction](https://argoverse.github.io/user-guide/getting_started.html#downloading-the-data) to download dataset:
+You can follow official [instruction](https://argoverse.github.io/user-guide/getting_started.html#downloading-the-data) to download the dataset:
 
 ```bash
 conda install s5cmd -c conda-forge
