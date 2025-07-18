@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Between Can and Will: Embodied Trajectory Prediction through Affordance and Intention</h2>
-    <strong>AAAI, 2026.</strong>
+    <strong>AAAI 2026</strong>
     <br>
         Anonymous authors
     <p>
