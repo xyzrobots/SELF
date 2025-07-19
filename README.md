@@ -19,10 +19,10 @@
 - [ ] Release full project and codes
 - [ ] Update README.md
 
-## 🚗 Abstract
+## 📜 Abstract
 We introduce the Selective Embodied Learning for Trajectory Prediction Framework (SELF), a trajectory prediction framework grounded in embodied intelligence. SELF redefines prediction as a dynamic perception--action loop rather than static inference, modeling how agents perceive and act upon affordances in complex traffic environments. It comprises a Selective Interaction Encoder (SIE) that selectively captures immediate, behaviorally-relevant interactions, a Affordance Aggregation Module (AAM) that models scenario-level constraints through saliency-based relational encoding, and a Intention Reasoning Module (IRM) that adaptively integrates these cues via gated attention. Together, these modules instantiate a closed-loop perception system capable of dynamically recalibrating predictions in response to evolving affordances. The model outputs multi-modal trajectory distributions through a confidence-weighted prediction head, optimized via a composite loss that balances accuracy, diversity, and temporal consistency. Extensive evaluations across Argoverse 2, NGSIM, MoCAD, and HighD show that SELF consistently achieves state-of-the-art performance with interpretable, behaviorally plausible predictions, demonstrating its potential for robust and context-aware motion predicting in real-world autonomous driving scenarios.
 
-## 🎞️ Pipeline
+## 🚗 Framework
 ```
 coming soon
 ```
@@ -126,7 +126,7 @@ pip install -e .
 ```
 
 ## 🕹️ Prepare the dataset
-### Setup [Argoverse 2 Motion Forecasting Dataset](https://www.argoverse.org/av2.html)
+### ⚙️ Setup [Argoverse 2 Motion Forecasting Dataset](https://www.argoverse.org/av2.html)
 ```
 data
     ├── train
@@ -164,7 +164,7 @@ export TARGET_DIR="$HOME/data/datasets"  # Target directory on your machine.
 s5cmd --no-sign-request cp "s3://argoverse/datasets/av2/$DATASET_NAME/*" $TARGET_DIR
 ```
 
-### Preprocess
+### 🔧 Preprocess
 ```
 python preprocess.py -d /path/to/data -p
 ```
@@ -184,7 +184,7 @@ python preprocess.py -d /path/to/data -p
 python train.py
 ```
 
-## ⭐ Val
+## 📊 Val
 ```bash
 # Val
 python eval.py checkpoint=/path/to/ckpt
@@ -192,5 +192,10 @@ python eval.py checkpoint=/path/to/ckpt
 python eval.py checkpoint=/path/to/ckpt submit=true
 ```
 
-## 😊 License
-Please see [MIT License](https://mit-license.org/).
+## 📌 Citation
+```
+coming soon
+```
+
+## ⭐ License
+[MIT License](https://mit-license.org/)
