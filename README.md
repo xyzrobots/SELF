@@ -31,13 +31,97 @@ coming soon
 
 ### Set up a new virtual environment and install dependency packpages
 ```bash
+# Create a new virtual environment
 conda create -n self python=3.10
 conda activate self
+# Install dependency packages
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 pip install natten==0.17.3+torch200cu118 -f https://shi-labs.com/natten/wheels
 git clone https://github.com/argoverse/argoverse-api.git
 cd argoverse-api
+```
+
+Replace the 'setup.py' script in 'argoverse-api' repository with following codes:
+```python
+#!/usr/bin/env python
+"""A setuptools based setup module.
+
+See:
+https://packaging.python.org/en/latest/distributing.html
+https://github.com/pypa/sampleproject
+"""
+
+import platform
+import sys
+from codecs import open  # To use a consistent encoding
+from os import path
+
+# Always prefer setuptools over distutils
+from setuptools import find_packages, setup
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, "README.md"), encoding="utf-8") as f:
+    long_description = f.read()
+
+
+if platform.system() == "Windows":
+    print("Argoverse currently does not support Windows, please use Linux/Mac OS")
+    sys.exit(1)
+
+setup(
+    name="argoverse",
+    version="1.1.0",
+    description="",
+    long_description=long_description,
+    url="https://www.argoverse.org",
+    author="Argo AI",
+    author_email="argoverse-api@argo.ai",
+    license="MIT",
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: POSIX",
+        "Operating System :: MacOS",
+        "Programming Language :: Python :: 3",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    ],
+    keywords="self-driving-car dataset-tools",
+    packages=find_packages(exclude=["tests", "integration_tests", "map_files"]),
+    package_data={"argoverse": ["argoverse/visualization/data/**/*"]},
+    include_package_data=True,
+    python_requires=">= 3.7",
+    install_requires=[
+        "colour",
+        "descartes",
+        "h5py",
+        "hydra-core",
+        "imageio",
+        "lapsolver",
+        "matplotlib",
+        "motmetrics",
+        "numba",
+        "numpy",
+        "omegaconf",
+        "opencv-python",
+        "pandas",
+        "pillow",
+        "polars",
+        "pyntcloud",
+        "scipy",
+        "shapely",
+        "scikit-learn",
+        "tqdm",
+        "typing_extensions",
+    ],
+)
+```
+
+Then, install 'argoverse-api' package:
+```bash
 pip install -e .
 ```
 
