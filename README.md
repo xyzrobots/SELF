@@ -23,7 +23,7 @@
 We introduce the Selective Embodied Learning for Trajectory Prediction Framework (SELF), a trajectory prediction framework grounded in embodied intelligence. SELF redefines prediction as a dynamic perception--action loop rather than static inference, modeling how agents perceive and act upon affordances in complex traffic environments. It comprises a Selective Interaction Encoder (SIE) that selectively captures immediate, behaviorally-relevant interactions, a Affordance Aggregation Module (AAM) that models scenario-level constraints through saliency-based relational encoding, and a Intention Reasoning Module (IRM) that adaptively integrates these cues via gated attention. Together, these modules instantiate a closed-loop perception system capable of dynamically recalibrating predictions in response to evolving affordances. The model outputs multi-modal trajectory distributions through a confidence-weighted prediction head, optimized via a composite loss that balances accuracy, diversity, and temporal consistency. Extensive evaluations across Argoverse 2, NGSIM, MoCAD, and HighD show that SELF consistently achieves state-of-the-art performance with interpretable, behaviorally plausible predictions, demonstrating its potential for robust and context-aware motion predicting in real-world autonomous driving scenarios.
 
 ## 🚗 Framework
-![image](https://github.com/xyzrobots/SELF/assets/framework.png)
+![image](https://github.com/xyzrobots/SELF/blob/main/assets/framework.png)
 
 ## 🛠️ Configure programming environment
 
